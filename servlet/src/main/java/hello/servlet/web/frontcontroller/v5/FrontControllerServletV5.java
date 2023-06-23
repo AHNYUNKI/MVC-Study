@@ -33,7 +33,7 @@ public class FrontControllerServletV5 extends HttpServlet {
 
     public FrontControllerServletV5() {
         initHandlerMappingMap();
-        initHandlerApaters();
+        initHandlerAdapters();
     }
 
     private void initHandlerMappingMap() {
@@ -46,9 +46,9 @@ public class FrontControllerServletV5 extends HttpServlet {
         handlerMappingMap.put("/front-controller/v5/v4/members", new MemberListControllerV4());
     }
 
-    private boolean initHandlerApaters() {
-        return handlerAdapters.add(new ControllerV3HandlerAdapter());
-        return handlerAdapters.add(new ControllerV4HandlerAdapter());
+    private void initHandlerAdapters() {
+        handlerAdapters.add(new ControllerV3HandlerAdapter());
+        handlerAdapters.add(new ControllerV4HandlerAdapter());
     }
 
     @Override
